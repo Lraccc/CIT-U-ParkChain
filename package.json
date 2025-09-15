@@ -6,7 +6,13 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "blockchain:compile": "npx hardhat compile",
+    "blockchain:node": "npx hardhat node",
+    "blockchain:deploy": "npx hardhat run scripts/deploy-contracts.js --network localhost",
+    "blockchain:deploy-local": "npx hardhat run scripts/deploy-contracts.js --network hardhat",
+    "blockchain:test": "npx hardhat test",
+    "blockchain:clean": "npx hardhat clean"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -64,6 +70,8 @@
     "zod": "3.25.67"
   },
   "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/contracts": "^5.0.0",
     "@tailwindcss/postcss": "^4.1.9",
     "@types/node": "^22",
     "@types/react": "^18",
