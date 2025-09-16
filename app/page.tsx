@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-card to-background">
+    <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="border-b bg-card/50 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
@@ -35,14 +35,22 @@ export default function HomePage() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto text-center">
+      <section
+        className="py-20 px-4 bg-cover bg-center min-h-[calc(80vh-80px)] flex items-center"
+        style={{ backgroundImage: "url('/images/bg3.png')" }}
+      >
+        <div className="w-full text-center">
           <Badge className="mb-6 bg-secondary text-secondary-foreground">Welcome Home Wildcats! 🎓</Badge>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)]">
             Smart Parking for the
-            <span className="text-primary block">Home of Topnotchers</span>
+            <span
+              className="text-primary block"
+              style={{ WebkitTextStroke: "1px #ffffff", paintOrder: "stroke fill" }}
+            >
+              Home of Topnotchers
+            </span>
           </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto text-pretty">
+          <p className="text-xl mb-8 max-w-2xl mx-auto text-pretty text-white/90 drop-shadow-[0_2px_6px_rgba(0,0,0,0.75)]">
             Experience the future of campus parking with blockchain technology. Reserve zones, pay securely, and never
             worry about finding a spot again.
           </p>
@@ -50,7 +58,12 @@ export default function HomePage() {
             <Button size="lg" className="text-lg px-8" asChild>
               <Link href="/dashboard">Reserve Parking Now</Link>
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 bg-transparent" asChild>
+            <Button
+              size="lg"
+              variant="outline"
+              className="text-lg px-8 text-white border-white bg-black/30 hover:bg-yellow-500/50 drop-shadow-md backdrop-blur-sm"
+              asChild
+            >
               <Link href="/how-it-works">How It Works</Link>
             </Button>
           </div>
